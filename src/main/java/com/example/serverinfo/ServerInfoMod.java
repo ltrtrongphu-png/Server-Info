@@ -5,6 +5,6 @@ import net.fabricmc.api.ClientModInitializer;
 public class ServerInfoMod implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
-        System.out.println("[ServerInfo] Mod loaded! Nhan !server de xem thong tin.");
+        System.out.println("[ServerInfo] Loaded! Nhan !server trong chat.");
     }
 }
