@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(ClientPlayNetworkHandler.class)
 public class ServerInfoMixin {
 
-    private static final String CMD_SERVER = "!server";
+    private static final String CMD = "!server";
 
     @Inject(
         method = "sendChatMessage(Ljava/lang/String;)V",
@@ -20,7 +20,7 @@ public class ServerInfoMixin {
         cancellable = true
     )
     private void onSendChat(String message, CallbackInfo ci) {
-        if (!message.equalsIgnoreCase(CMD_SERVER)) return;
+        if (!message.equalsIgnoreCase(CMD)) return;
         ci.cancel();
 
         MinecraftClient client = MinecraftClient.getInstance();
@@ -54,8 +54,8 @@ public class ServerInfoMixin {
         handler.sendChatMessage("Ping: " + ping + "ms");
         handler.sendChatMessage("Version: " + version);
         handler.sendChatMessage("Dimension: " + dimension);
-        handler.sendChatMessage("Players online: " + playerCount);
-        handler.sendChatMessage("World time: " + time);
+        handler.sendChatMessage("Players: " + playerCount);
+        handler.sendChatMessage("Time: " + time);
         handler.sendChatMessage("FPS: " + fps);
         handler.sendChatMessage("-------------------");
     }
