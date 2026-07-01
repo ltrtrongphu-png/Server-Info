@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "serverinfo",
+  "version": "1.0.0",
+  "name": "ServerInfo",
+  "description": "Nhan !server de xem thong tin may chu",
+  "environment": "client",
+  "entrypoints": {
+    "client": ["com.example.serverinfo.ServerInfoMod"]
+  },
+  "mixins": ["serverinfo.mixins.json"],
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "minecraft": "1.21.x",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}
