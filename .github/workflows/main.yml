@@ -18,9 +18,9 @@ jobs:
         with:
           gradle-version: '8.8'
       - name: Build
-        run: cd serverinfo && gradle build
+        run: gradle build
       - name: Upload JAR
         uses: actions/upload-artifact@v4
         with:
           name: serverinfo-mod
-          path: serverinfo/build/libs/*.jar
+          path: build/libs/*.jar
